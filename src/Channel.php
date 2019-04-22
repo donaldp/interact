@@ -3,6 +3,7 @@
 namespace Don47\Interact;
 
 use Carbon\Carbon;
+use Don47\Interact\Event;
 use Don47\Interact\Message;
 use Don47\Interact\Foundation\ChannelInterface;
 
@@ -48,5 +49,17 @@ class Channel implements ChannelInterface
     }
 
     return true;
+  }
+
+  /**
+   * Listen to a channel
+   *
+   * @param string $channel The name of the channel
+   * @param Closure $callback The callback
+   * @return string
+   */
+  public static function listen(string $channel, Closure $callback) : string
+  {
+    return Event::listen($channel, $callback);
   }
 }
