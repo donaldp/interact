@@ -22,4 +22,13 @@ interface ChannelInterface
    * @return bool
    */
   public static function forget(string $channel) : bool;
+
+  /**
+   * Listen to channels
+   *
+   * @param string $channel The name of the channel
+   * @param Closure $callback The callback
+   * @return string
+   */
+  public static function listen(string $channel, Closure $callback) : string;
 }
