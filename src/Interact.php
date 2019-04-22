@@ -51,6 +51,12 @@ class Interact extends Plugin
    */
   const MIGRATION = 'don47_interact_messages';
 
+  /*
+  |--------------------------------------------------------------------------
+  | Start Plugin
+  |--------------------------------------------------------------------------
+  */
+
   /**
    * Check if the config is present before loading the plugin
    *
