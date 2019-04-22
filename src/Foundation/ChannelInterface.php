@@ -14,4 +14,12 @@ interface ChannelInterface
    * @return boolean
    */
   public static function trigger(string $channel, array $data = []) : bool;
+
+  /**
+   * Forget a channel
+   *
+   * @param string $channel
+   * @return bool
+   */
+  public static function forget(string $channel) : bool;
 }
