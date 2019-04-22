@@ -71,7 +71,11 @@ class Interact extends Plugin
   public static function routes($router)
   {
     $router->group(['namespace' => '\Don47\Interact\Http\Controllers'], function () use ($router) {
-      //
+
+      $router->post(self::getUrl(), 'Action')
+            ->middleware(self::getMiddleware())
+            ->name('don47.interact.messages');
+
     });
   }
 
