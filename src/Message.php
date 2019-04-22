@@ -14,4 +14,13 @@ class Message extends Model
   protected $fillable = [
     'name', 'data'
   ];
+
+  /**
+   * Cast attributes as something else
+   *
+   * @var array
+   */
+  protected $casts = [
+    'data' => 'array'
+  ];
 }
