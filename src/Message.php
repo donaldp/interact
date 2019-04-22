@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
   /**
+   * The name of the table
+   *
+   * @var string
+   */
+  protected $table = 'don47_interact_messages';
+
+  /**
    * The attributes that are mass assignable
    *
    * @var array
