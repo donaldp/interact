@@ -2,6 +2,7 @@
 
 namespace Don47\Interact;
 
+use Closure;
 use Carbon\Carbon;
 use Don47\Interact\Event;
 use Don47\Interact\Message;
