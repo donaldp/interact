@@ -2,6 +2,7 @@
 
 namespace Don47\Interact;
 
+use Carbon\Carbon;
 use Don47\Interact\Message;
 use Modulus\Utility\Plugin;
 use Don47\Interact\Http\Middleware\ProtectsChannelMessages;
@@ -126,4 +127,3 @@ class Interact extends Plugin
     return is_array($middleware) ? implode(',', $middleware) : $middleware;
   }
 }
-
