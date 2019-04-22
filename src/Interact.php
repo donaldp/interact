@@ -33,5 +33,21 @@ class Interact extends Plugin
   const AUTHORS = [
     'Donald Pakkies' => 'donaldpakkies@gmail.com'
   ];
+
+  /*
+  |--------------------------------------------------------------------------
+  | Plugin installation
+  |--------------------------------------------------------------------------
+  */
+
+  /**
+   * Interact::CONFIG
+   */
+  const CONFIG = 'interact-messages';
+
+  /**
+   * Interact::MIGRATION
+   */
+  const MIGRATION = 'don47_interact_messages';
 }
 
