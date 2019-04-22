@@ -2,6 +2,7 @@
 
 namespace Don47\Interact;
 
+use Don47\Interact\Message;
 use Modulus\Utility\Plugin;
 use Don47\Interact\Http\Middleware\ProtectsChannelMessages;
 
@@ -83,6 +84,24 @@ class Interact extends Plugin
             ->name('don47.interact.messages');
 
     });
+  }
+
+  /**
+   * Start scheduler
+   *
+   * @param Schedule $scheduler
+   * @return void
+   */
+  public static function schedule($scheduler)
+  {
+    /**
+     * Remove messages older than 5 seconds
+     */
+    $scheduler->call(function () {
+
+      Message::where('updated_at', '<', Carbon::now()->subSeconds(5)->toDateTimeString())->delete();
+
+    })->everyMinute();
   }
 
   /**
