@@ -30,4 +30,19 @@ class Message extends Model
   protected $casts = [
     'data' => 'array'
   ];
+
+  /**
+   * Get the current connection name for the model
+   *
+   * @return string
+   */
+  public function getConnectionName() : string
+  {
+    $connection = Interact::$config['interact-messages']['database']['connection'];
+
+    return (
+      array_key_exists($connection, Interact::$config['database']['connections']) ?
+      $connection : Interact::$config['database']['default']
+    );
+  }
 }
