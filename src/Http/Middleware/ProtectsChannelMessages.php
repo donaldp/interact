@@ -16,10 +16,15 @@ class ProtectsChannelMessages
   public function handle($request, $continue) : bool
   {
     if (
+
       $this->hasAuth($request) &&
+
       $this->hasBearerToken($request) &&
+
       $this->isAuthSuccessful($request) &&
+
       $this->isOfSameOrigin($request)
+
     ) {
       return $continue;
     }
