@@ -23,6 +23,15 @@ class ProtectsChannelMessages
     ) {
       return $continue;
     }
+
+    /**
+     * Authorization failed
+     */
+    return cancel(
+      response()->json([
+        'message' => null
+      ], 200)
+    );
   }
 
   /**
