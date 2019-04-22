@@ -49,5 +49,16 @@ class Interact extends Plugin
    * Interact::MIGRATION
    */
   const MIGRATION = 'don47_interact_messages';
+
+  /**
+   * Check if the config is present before loading the plugin
+   *
+   * @return bool
+   */
+  public function onload() : bool
+  {
+    return  is_array(config(Interact::CONFIG)) &&
+            array_key_exists(config(Interact::CONFIG . '.database.connection'), config('database.connections'));
+  }
 }
 
