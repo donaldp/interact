@@ -2,6 +2,7 @@
 
 namespace Don47\Interact;
 
+use Don47\Interact\Interact;
 use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
