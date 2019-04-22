@@ -19,12 +19,12 @@ Install
 -------
 
 Require the package with composer:
-```
+```bash
 composer require don47/interact
 ```
 
 Install the package:
-```
+```bash
 php craftsman plugin:install --class="\Don47\Interact\Interact"
 ```
 
@@ -49,12 +49,12 @@ Append a new `"channels"` database connection in your `database` config file:
 ```
 
 Create a new sqlite file:
-```
+```bash
 touch database/interactions
 ```
 
 Then run your migrations:
-```
+```bash
 php craftsman migrate all
 ```
 
@@ -69,7 +69,7 @@ In order for your application to know if a page should stay alive, you need to u
 
 For example:
 
-```
+```html
 <body>
   {!! stay_alive(true) !!}
 </body>
@@ -79,7 +79,7 @@ Since this is a PHP configuration, we need to pass `true` inside the `stay_alive
 
 Now that we've told our view to stay alive, we can start listening to channels using the `interact()->listen()` helper method.
 
-```
+```html
 <body>
   {!! stay_alive(true) !!}
 
