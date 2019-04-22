@@ -63,6 +63,19 @@ class Interact extends Plugin
   }
 
   /**
+   * Load routes
+   *
+   * @param Route $router
+   * @return void
+   */
+  public static function routes($router)
+  {
+    $router->group(['namespace' => '\Don47\Interact\Http\Controllers'], function () use ($router) {
+      //
+    });
+  }
+
+  /**
    * Get route url
    *
    * @return string
