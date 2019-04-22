@@ -46,4 +46,14 @@ class Message extends Model
       $connection : Interact::$config['database']['default']
     );
   }
+
+  /**
+   * Check if message is not old
+   *
+   * @return bool
+   */
+  public function isNotOld() : bool
+  {
+    return $this->updated_at > Carbon::now()->subSeconds(3);
+  }
 }
