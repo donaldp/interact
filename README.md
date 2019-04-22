@@ -8,7 +8,7 @@ This package adds an extra layer to your application that makes it possible to b
 <a href="https://packagist.org/packages/don47/interact"><img src="https://poser.pugx.org/don47/interact/license.svg" alt="License"></a>
 </p>
 
-<img src='live_application.gif'>
+<img src='demo.gif'>
 
 Requirements
 ------------
