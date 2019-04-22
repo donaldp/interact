@@ -15,6 +15,19 @@ class ProtectsChannelMessages
    */
   public function handle($request, $continue) : bool
   {
-    //
+    if ($this->hasAuth($request)) {
+      return $continue;
+    }
+  }
+
+  /**
+   * Check if auth header is present
+   *
+   * @param \Modulus\Http\Request $request
+   * @return boolean
+   */
+  private function hasAuth($request) : bool
+  {
+    return $request->headers->has('Authorization');
   }
 }
