@@ -3,6 +3,7 @@
 namespace Don47\Interact;
 
 use Modulus\Utility\Plugin;
+use Don47\Interact\Http\Middleware\ProtectsChannelMessages;
 
 class Interact extends Plugin
 {
@@ -69,6 +70,18 @@ class Interact extends Plugin
   public static function getUrl() : string
   {
     return self::$config['interact-messages']['request']['url'] ?? '/interact/messages';
+  }
+
+  /**
+   * Get route middleware
+   *
+   * @return string
+   */
+  public static function getMiddleware() : string
+  {
+    $middleware = self::$config['interact-messages']['middleware'] ?? ProtectsChannelMessages::class;
+
+    return is_array($middleware) ? implode(',', $middleware) : $middleware;
   }
 }
 
