@@ -15,7 +15,7 @@ class ProtectsChannelMessages
    */
   public function handle($request, $continue) : bool
   {
-    if ($this->hasAuth($request)) {
+    if ($this->hasAuth($request) && $this->hasBearerToken($request)) {
       return $continue;
     }
   }
@@ -29,5 +29,16 @@ class ProtectsChannelMessages
   private function hasAuth($request) : bool
   {
     return $request->headers->has('Authorization');
+  }
+
+  /**
+   * Check if authorization is Bearer
+   *
+   * @param \Modulus\Http\Request $request
+   * @return boolean
+   */
+  private function hasBearerToken($request) : bool
+  {
+    return starts_with(strtolower($request->headers->authorization), 'bearer ');
   }
 }
