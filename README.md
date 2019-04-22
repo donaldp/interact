@@ -99,6 +99,20 @@ interact('app', [
 
 > Note: `DEV_AUTOLOAD_PLUGINS` must be set to true in your `.env` file for this plugin to work.
 
+Available Helper methods
+---
+
+Helper         | Arguments                      | Description
+---------------|--------------------------------|------------------------------
+`stay_alive()` | `bool $withConfig`             | Makes page/view stay alive.   |
+`interact()`   | `string $channel, array $data` | Interacts with the front-end. |
+
+### Other
+
+Helper                 | Arguments                            | Description
+-----------------------|--------------------------------------|------------
+`interact()->listen()` | `string $channel, closure $callback` | Listens to incoming messages from the back-end.
+
 -----
 ## Todo
 * Add JavaScript documentation
