@@ -32,4 +32,21 @@ class Channel implements ChannelInterface
 
     return $message->save();
   }
+
+  /**
+   * Forget a channel
+   *
+   * @param string $channel The name of the channel
+   * @return bool
+   */
+  public static function forget(string $channel) : bool
+  {
+    $message = Message::where('name', strtolower($channel))->first();
+
+    if ($message !== null) {
+      return $message->delete();
+    }
+
+    return true;
+  }
 }
