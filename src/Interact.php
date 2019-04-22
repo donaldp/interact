@@ -60,5 +60,15 @@ class Interact extends Plugin
     return  is_array(config(Interact::CONFIG)) &&
             array_key_exists(config(Interact::CONFIG . '.database.connection'), config('database.connections'));
   }
+
+  /**
+   * Get route url
+   *
+   * @return string
+   */
+  public static function getUrl() : string
+  {
+    return self::$config['interact-messages']['request']['url'] ?? '/interact/messages';
+  }
 }
 
