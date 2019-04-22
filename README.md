@@ -2,7 +2,18 @@
 
 This package adds an extra layer to your application that makes it possible to build real-time applications.
 
+<p align="center">
+<a href="https://packagist.org/packages/don47/interact"><img src="https://poser.pugx.org/don47/interact/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/don47/interact"><img src="https://poser.pugx.org/don47/interact/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/don47/interact"><img src="https://poser.pugx.org/don47/interact/license.svg" alt="License"></a>
+</p>
+
 <img src='live_application.gif'>
+
+Requirements
+------------
+* PHP >=7.3.*
+* [`modulusphp/framework`]('https://github.com/modulusphp/framework') >=1.9.9.5
 
 Install
 -------
@@ -50,7 +61,7 @@ php craftsman migrate all
 Usage
 -----
 
-### PHP (using Interact in Medusa)
+### PHP (using Interact in Medusa Templates)
 
 #### Front-end
 
