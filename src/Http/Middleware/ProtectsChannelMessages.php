@@ -15,7 +15,7 @@ class ProtectsChannelMessages
    */
   public function handle($request, $continue) : bool
   {
-    if ($this->hasAuth($request) && $this->hasBearerToken($request)) {
+    if ($this->hasAuth($request) && $this->hasBearerToken($request) && $this->isAuthSuccessful($request)) {
       return $continue;
     }
   }
@@ -40,5 +40,16 @@ class ProtectsChannelMessages
   private function hasBearerToken($request) : bool
   {
     return starts_with(strtolower($request->headers->authorization), 'bearer ');
+  }
+
+  /**
+   * Check if the key matches
+   *
+   * @param \Modulus\Http\Request $request
+   * @return boolean
+   */
+  private function isAuthSuccessful($request) : bool
+  {
+    return explode(' ', $request->headers->authorization)[1] == Interact::$config['interact-messages']['request']['key'];
   }
 }
