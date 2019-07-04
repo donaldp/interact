@@ -2,7 +2,7 @@
   "name": "don47/interact",
   "description": "Build real-time php applications",
   "keywords": ["modulus", "real-time"],
-  "version": "0.1",
+  "version": "0.1.1",
   "license": "MIT",
   "type": "package",
   "support": {
@@ -20,7 +20,7 @@
     "psr-4": {
       "Don47\\Interact\\": "src/"
     },
-    "files": ["scr/helpers.php"]
+    "files": ["src/helpers.php"]
   },
   "minimum-stability": "stable"
 }
